@@ -3,8 +3,13 @@ package problem2;
 import java.util.Scanner;
 public class IntegerListTest
 {
+
     static IntegerList list = new IntegerList(10);
     static Scanner scan = new Scanner(System.in);
+
+
+
+
     //-------------------------------------------------------
 // Create a list, then repeatedly print the menu and do what the
 // user asks until they quit
@@ -40,6 +45,21 @@ public class IntegerListTest
             case 2:
                 list.print();
                 break;
+            case 3:
+                System.out.println("Wich value would you like to add ?");
+                int val = scan.nextInt();
+                list.addElement(val);
+                break;
+            case 4:
+                System.out.println("Wich value would you like to remove its first occurrence?");
+                int remVal = scan.nextInt();
+                list.removeFirst(remVal);
+                break;
+            case 5:
+                System.out.println("Wich value would you like to remove all its occurrences?");
+                int newVal = scan.nextInt();
+                list.removeAll(newVal);
+                break;
             default:
                 System.out.println("Sorry, invalid choice");
         }
@@ -54,6 +74,11 @@ public class IntegerListTest
         System.out.println("0: Quit");
         System.out.println("1: Create a new list (** do this first!! **)");
         System.out.println("2: Print the list");
+        System.out.println("3 : Add an element" );
+        System.out.println("4: Remove first occurrence of an element" );
+        System.out.println("5: Remove all occurrences of an element");
+
         System.out.print("\nEnter your choice: ");
+
     }
 }
